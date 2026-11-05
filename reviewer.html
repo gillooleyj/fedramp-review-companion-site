@@ -2091,10 +2091,11 @@ function reviewNotes(doc, record, row) {
     if (row && ReviewScorecard.refreshDisposition(scoreReport,row,doc,notes)) {
       ScorecardView.refreshReview($('scorecard-body'), scoreReport, row);
       workQueue.refresh();
+      PackageHandoff.updateProgress($('package-handoff'),workflowContext());
       explain();
     }
   }
-  ta.oninput=save; sel.onchange=()=>{save(); PackageHandoff.updateProgress($('package-handoff'),workflowContext());};
+  ta.oninput=save; sel.onchange=save;
   ta.onchange=()=>PackageHandoff.updateProgress($('package-handoff'),workflowContext());
   explain(); return notesPanel;
 }
