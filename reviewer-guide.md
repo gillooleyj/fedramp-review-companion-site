@@ -167,42 +167,41 @@ The workbook already contains a useful reasoning sequence in columns I–M: evid
 
 Treat the supplied Excel export carefully: it has duplicate Class C KSI-SVC-VRI rows 421–422, stored cell errors, and cached generated report text claiming successful tests despite an unfilled review. These are observations about the local export, not a judgment about the live Google Sheets version. Do not rely on its counts or generated prose without checking the actual review inputs. The [detailed workbook analysis](internal-workflow-analysis.html) identifies exact cells and other limitations. No workbook formulas, scripts or live integrations were recalculated or repaired.
 
-## Using the local Review Companion
+## Walk through a package in the Review Companion
 
-Open [reviewer.html](reviewer.html) in a browser. It works without a server or internet connection. Use the fictional example first, then select one or more JSON files. Confirm which document version controls the review before drawing conclusions from historical copies or amendments.
+The [Review Companion](reviewer.html) keeps the selected files and your work in the current browser tab. Follow the four steps in order on a first review. Use the numbered navigation to revisit a step as questions arise.
 
-### Read the JSON as a document
+### 1. Load the package
 
-The readable view presents headings, labeled fields, paragraphs, lists and nested records instead of requiring you to read JSON punctuation. The Raw JSON view preserves the source data for comparison. **Download readable document** saves a standalone HTML rendering of the whole selected file, which can be opened or printed from a browser. It contains source content, not your review notes. JSON pointers identify where the displayed text originates. Readable formatting changes presentation, not the source content or its evidentiary meaning.
+Choose the **Review class** from the submission. Extract any archives. Use **Choose folder** to preserve the package’s relative file paths, or **Choose files** to select the JSON documents and supporting artifacts together. Each selection replaces the previous one. Confirm which versions control if the package includes amendments or historical copies. To practice, choose Class A and **Load fictional teaching example**.
 
-Select Class A, B or C to see the published-rule lens and **Package scorecard**. Select the JSON documents and supporting files together, or choose a package folder. The scorecard compares the KSI roster, checks supported JSON against pinned schemas, traces local references and highlights the next practice to inspect. See [how to read the scorecard](scorecard-guide.html) for a worked example. It does not inspect the contents of PDFs or Office files, follow trust-center links, determine full applicability, or score compliance.
+### 2. Check the package
 
-### Find evidence references
+Start with the **Package scorecard**. Check which files opened, whether the recognized CPO, SDR and OCR matched their bundled schemas, which class KSIs appear in each SDR, and which references point to something you can inspect. A structural match tells you the document fits a schema. You still need to read the cited artifact to determine what it supports. The [scorecard walkthrough](scorecard-guide.html) works through a fictional example.
 
-The [SDR evidence-field reference](evidence-fields.html) explains the published schema. There is no standard `frrEvidence` field in version 1.1.1. An SDR can mention evidence in assessment narrative, implementation or validation explanations, dedicated evidence entries, remarks, or other supporting structures. The schema and provider’s organization determine the precise locations. For example, `frrAssessment` is assessment text and can name supporting artifacts; it is not necessarily a complete evidence inventory. A `ksiEvidence` entry can provide a more structured description and location.
+Open **Published requirements for the selected class**, then work through **Package-level checks**. Confirm the offering, controlling versions and applicable rules. For Class A, inspect the alternative framework assessment. For Classes B and C, check the independent assessment. Reconcile the ongoing report and supporting artifacts. For each check, select a review status and record the file, page or field and what it established in **Source and review basis**. If a check is outside your scope, record why.
 
-The reference index helps locate URLs and artifact names mentioned in the loaded JSON and identifies the field where each mention occurs. It does not establish that the referenced material was supplied, opened, authenticated or evaluated. A filename in assessment prose is a citation. An empty dedicated evidence array does not prove that no evidence exists elsewhere. Confirm the actual artifact and its relevance before using it in a conclusion.
+### 3. Review practices and evidence
 
-### Save and reopen your own notes
+Work through the submitted SDR practices one at a time. For each one, confirm the applicable rule, read the provider’s implementation and validation, then examine the independent assessment where applicable. Follow the evidence to its source. Record a **Working disposition** and **Evidence and rationale**. Include what you observed, the scope and period it covers, and any follow-up question. The practice counts as reviewed when you enter both a disposition and a written basis. **Next unfinished** takes you to another practice that still needs work. **Find a practice** locates an entry across the selected SDRs.
 
-**Export review notes** saves a separate JSON file containing your comments and working dispositions, linked to source identifiers. **Load saved review notes** reopens a notes file previously exported by this tool. It is optional: leave it alone when starting a new review. It is not the place to open an SDR, CPO, OCR or other provider package document.
+An SDR can cite evidence in implementation, validation, assessment text, remarks or a dedicated evidence entry. For example, `frrAssessment` can name an artifact, and `ksiEvidence` can give a structured description and location. SDR schema 1.1.1 has no standard `frrEvidence` field. Check the field and its JSON pointer, then inspect the source before relying on the claim. [SDR evidence-field reference](evidence-fields.html)
 
-To continue a review later, reopen the same package JSON, choose the same class lens, then load the saved notes file. Notes are associated with filename, content hash where available, class lens and JSON pointer. An amended package does not silently inherit notes from an older version. If hashing is unavailable, matching lasts only for the loaded file in that tab and notes cannot automatically reconnect after a later reload.
+Follow a linked JSON record or embedded excerpt in the reader. For matched local text files, **Read selected text file** previews up to 128 KiB. For a PDF, Office file or other binary artifact, use **Save a copy** and open it on your device. Record the relevant page, sheet, cell or passage in your rationale. External references require separate inspection. Use the return control to get back to the practice.
 
-Notes remain in the tab until exported; closing the tab without exporting loses those working notes. Loading saved notes supplements current notes and replaces an existing note for the same source entry. Exported files include your comments and source identifiers and should be handled with the package. Nothing is sent to an external service by this prototype.
+Use **Browse a source document** to choose a JSON file, search its entries or **Read whole document**. **Display format** switches between **Readable document** and **Raw JSON**. **Download readable document** saves a standalone HTML rendering of the selected JSON that you can open or print.
 
-## A fuller reviewer: what to build next
+### 4. Record your determination
 
-The next version should be based on an approved review model before adding automated judgments:
+Review the count of documented checks and practices, then open **Inspect open items before recommending a next step**. Set your **Working recommendation** and write its basis, open conditions and next steps, and implications for agencies. Name the evidence you relied on and the owner or evidence needed to resolve an open question. The team and approving officials make the program decision.
 
-1. **Versioned applicability:** import a pinned official rules release and schema set; filter by actor, class, type, path, stage and effective dates, retaining rule force and conditional exceptions.
-2. **Package provenance:** resolve current files from manifests; preserve hashes; classify operational, example, historical and analytical artifacts. Let the reviewer confirm ambiguous selections.
-3. **Evidence navigation:** distinguish reference named, artifact supplied, artifact opened, and evidence evaluated. Support local PDF page citations and cross-document searches. Keep printed page numbers separate from PDF page indexes. Resolve a document through its title, trust-center resource identifier and confirmed local mapping when the URL does not expose its filename; label proposed matches for reviewer confirmation.
-4. **Separate validation layers:** syntax/schema checks; applicable-ID coverage; cross-document consistency; human evidence sufficiency; authorized team disposition. Never turn one green layer into all five.
-5. **Issue ledger:** retain rule/version, artifact/pointer, observation, meaning, question, owner, response, conclusion and decision date. Export to workbook fields using class plus requirement ID, not row number alone.
-6. **Human-reviewed assistance:** suggestions must cite source passages, distinguish provider/assessor/reviewer voices, preserve uncertainty and permit correction. A generated answer must not overwrite evidence or become a certification verdict.
+**Download team handoff (.txt)** creates a human-readable report with your recommendation, package checks, practice dispositions and rationale, and outstanding work. You can hand off a partial review with **Review in progress** selected. **Download scorecard (.txt)** in step 2 saves a separate snapshot of counts, file checks and practice-level traces.
 
-This ordering makes the tool useful as a teaching and review aid before attempting broader automation.
+### Save your work and resume
+
+Choose **Export review notes** before replacing the package or closing the tab. Keep the resulting **20x-review-notes.json** with the package. It contains your practice and source notes, package checks and working recommendation for the selected package and class.
+
+To continue in this or another browser, select the same class and load the same complete set of files with the same paths. In step 1, expand **Resume a saved review (optional)** and choose the exported JSON under **Load saved review notes**. The tool uses the class and source-file identities to reconnect notes with the review. When the browser flags a file that can only be identified in the current session, also download the team handoff to retain a readable copy of your package checks and recommendation.
 
 ## Source and version boundaries
 
