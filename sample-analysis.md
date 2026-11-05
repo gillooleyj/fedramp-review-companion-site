@@ -32,19 +32,17 @@ The purpose is to practice a repeatable reasoning chain: **applicable requiremen
 
 **Lesson.** Use four separate states: reference mentioned, artifact supplied, artifact inspected, conclusion supported. The reference index can help with the first; it cannot establish the other three from a name alone. Apply the [Class B IV&V rules](https://www.fedramp.gov/2026/reference/20x/b/independent-verification-and-validation/) to determine the relevant obligations.
 
-## Exercise 3 — Class C: two statuses refer to different scopes
+## Exercise 3 — Class C assessment scope
 
-**Scenario.** The provider’s current record says “Partially Implemented” because a restriction covers central administrators but not delegated support roles. An assessor’s earlier paragraph says “Pass” for a test of the central administrator group. The package does not explain whether a later assessment covers the remaining roles.
+**Scenario.** The provider reports “Partially Implemented” because an access restriction covers central administrators and excludes delegated support roles. The assessor tested a central administrator account, observed a denied operation and recorded “Pass” for that test.
 
-**What is established.** The provider discloses incomplete implementation. The assessor states a favorable conclusion for a bounded earlier test. Neither statement should be silently rewritten to match the other.
+**What is established.** The observed result corroborates the provider’s account for the tested group. The provider openly identifies the remaining limitation. Keep both statements with their original scope.
 
-**What remains unknown.** Did the earlier test address the complete applicable population? Does its conclusion apply to the present configuration? Is a new assessment needed, or is the apparent disagreement resolved by scope and dates?
+**Review question.** “Can delegated support perform the same operation on in-scope resources? If so, what protection or customer risk applies to that path?” This asks about the consequence of the limitation the provider disclosed.
 
-**Review question.** “Please reconcile the current partial status and the earlier favorable assessment. Identify the population and dates covered by each, the remaining roles, and the assessor’s current conclusion for the applicable scope.”
+**Possible working note.** “The test confirms the restriction for the central administrator account. The SDR excludes delegated support. Check the permissions and customer impact of that exception before drawing a conclusion for the whole service.”
 
-**Possible working note.** “Provider status and assessor result preserved separately. Scope and chronology explain a possible difference, but the package has not yet reconciled the conclusion for the current population.”
-
-**Lesson.** Status reconciliation is a reasoning task, not a rule that one favorable label wins. Preserve assessor meaning as required by the applicable [Class C IV&V rules](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/).
+**When to raise a discrepancy.** Suppose the assessment summary instead concludes that the restriction was effective for all privileged roles, yet the cited result covers only central administrators. Record the exact broader conclusion and ask what evidence or sampling rationale supports extending it to delegated support. The material difference is between the conclusion and its evidence. [Class C assessor responsibilities](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/#general-independent-assessor-responsibilities)
 
 ## Exercise 4 — Collection succeeded, but the security result did not
 

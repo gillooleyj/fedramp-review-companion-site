@@ -8,19 +8,23 @@ This guide combines the internal SOP and workbook, official CR26 material, and n
 
 ## Start here
 
-For a first review, try the fictional example with **Class C** selected. Open **AFC-CSO-ACK**, read **Items to reconcile**, and follow the receipt test. It shows one external sender received an acknowledgment. The assessment says “Pass,” while the provider reports partial implementation and the test omits other routes. Your first task is to decide what that one test supports and record the remaining question in the sheet. [Open the Review Companion](reviewer.html)
+For a first review, try the fictional Class C example. Open **AFC-CSO-ACK** and follow the receipt test. The provider describes partial implementation. One external sender received an acknowledgment, exactly as the assessor reports. Your first question is whether this route represents the messages the rule covers. Record what you can establish and which evidence would answer any remaining question. [Open the Review Companion](reviewer.html)
 
 For the step-by-step route from that observation to workbook row 235, see **Walk through a package in the Review Companion** below. The [scorecard walkthrough](scorecard-guide.html) follows the same fictional artifacts. Use the [SOP and workbook map](internal-workflow-analysis.html) for team roles and handoffs, and the [official sources](official-research.html) to check the rule edition for your assignment.
 
 ## The reasoning behind the review
 
-The provider describes its security decisions and implementation. Verification establishes whether the described measures exist. Validation establishes whether they produce the intended security outcome. Independent assessment evaluates those measures and their effectiveness. The FedRAMP review then examines the package and assessment information, resolves questions, and develops a program decision record. These roles overlap in subject matter, but they are not interchangeable.
+Start with the actor named in the rule. For a Class B or C practice, use three questions to distinguish a claim, an assessment result and a reviewer decision.
 
-For example, a firewall policy describes the intended protection. A deployed configuration can substantiate that the protection is installed. A relevant traffic test can substantiate that it blocks the intended traffic. The assessor must explain what was examined and what the result supports. A reviewer still needs to know whether that test covered the actual service, relevant interfaces, exceptions and time period. See the official [IV&V rules](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/), particularly IVV-CSO-SEI, IVV-CSO-SEE, IVV-IAS-VIM and IVV-IAS-VEF.
+| Actor | Question to answer | Where to look |
+| --- | --- | --- |
+| Provider | What measure does the provider say it implemented? Where does it apply, what limitations does the provider disclose, and what evidence shows it operates as described? | Read the implementation and validation entries in the SDR. Check the evidence supplied for both the deployed measure and its effectiveness. [SDR-CSO-FRR](https://www.fedramp.gov/2026/reference/20x/c/security-decision-record/#fedramp-rules) and [IVV-CSO-SEI and IVV-CSO-SEE](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/#supply-evidence-of-implementation) |
+| Independent assessor | Did the assessor verify the actual measure against the provider’s description and validate the intended outcome? What was observed for the tested population and period? | Read the practice-level method, evidence and findings in the SDR. Check the overall assessment in the CPO for reported failures or disputes. [IVV-IAS-VIM through IVV-IAS-OSA](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/#verify-implementation) |
+| FedRAMP reviewer | What conclusion can the team support for this service, and what does an agency still need to know? | Preserve the provider’s status in F. Use K for method appropriateness, L for rule intent, M for information sufficiency and N/O for your own decision and basis. [Team review sheet workflow](internal-workflow-analysis.html) |
 
-The central question is therefore: **“What conclusion does this evidence justify, for this scope and time period?”** It is not enough that the package uses the right security terminology or contains an assessor's favorable label.
+In SDR schema 1.1.1, the provider implementation status is enumerated. The FRR and KSI assessment fields contain narrative text. When an assessor writes “Pass” or “Fail,” read the surrounding method, criteria, scope and result to determine what was tested. The same package can accurately disclose a partial implementation and report a successful test of the part already in place. [Official SDR schema](https://www.fedramp.gov/schemas/fedramp-security-decision-record-schema-2026-06-24.json)
 
-A program reviewer should understand and challenge the assessment basis without silently assuming the independent assessor's responsibilities or inventing an extra technical standard. When an uncertainty requires an authoritative interpretation or decision, use the team and escalation process.
+A useful follow-up identifies something concrete. For example, the provider might mark a restriction “Implemented” for all production administrators and the assessor might report “Pass” after testing central administrators alone. Check whether that group represents the population and how the choice is justified. If the assessor reports that a prohibited operation actually succeeded, follow the failed test to the underlying result and the provider’s response. An accurate account of the failure still matters to the agency’s risk decision.
 
 ## What each artifact is for
 
@@ -87,11 +91,11 @@ Do not invent a numerical sampling threshold. Sampling and method expectations m
 
 ### 5. Read the independent assessment as an argument
 
-Identify who assessed what, when, by which method, using what evidence, and with what exceptions. Determine whether the conclusion matches the scope and result actually described. Compare it with the provider's current status and subsequent amendments.
+Identify the assessor’s criterion, method, population, period, observed result and exceptions. Compare the conclusion with the exact claim it addresses. A dated result for one group can corroborate the provider’s account of that group. A wider claim needs a basis for extending the result, such as an explained representative sample. For Class B and C, look for both independent technical verification of the measure and validation of its effectiveness. [Independent verification and validation](https://www.fedramp.gov/2026/reference/20x/c/independent-verification-and-validation/#general-independent-assessor-responsibilities)
 
-If the provider says “Partially Implemented” while preserved assessor text says “Pass,” retain both. Ask whether the assessor evaluated a subset, used an earlier version, applied a different criterion or has since reassessed. Do not “repair” that conflict by editing the assessor conclusion yourself.
+In Class A, first identify the alternative framework audit, its period and exceptions, and the mapping to the FedRAMP practice. Read any separately supplied FedRAMP assessment in its own scope. [Class A optional independent verification and validation](https://www.fedramp.gov/2026/reference/20x/a/fedramp-certification/#optional-independent-verification-and-validation)
 
-**Workbook:** K and L, with the basis in O. Keep current observations distinct from historical conclusions.
+**Workbook.** In K, record whether the methods answer the question. In O, cite the particular test and explain any limitation that affects your judgment.
 
 ### 6. Make two judgments, not one
 
@@ -103,9 +107,7 @@ First ask whether the intended outcome is met. Then ask whether the package supp
 
 Use this structure: **observed fact → requirement or security significance → unresolved question → requested evidence or clarification → closure condition.**
 
-Fictional example: “The SDR describes a partially deployed access restriction, while the assessor narrative concludes Pass for an earlier test of one administrative group. Please identify the population and dates covered by each statement, provide the cited result, and reconcile the current conclusion for the applicable scope. This item can be reconsidered when the scope and conclusion are consistent with attributable evidence.”
-
-That example is a review question, not a finding of violation. Its request should be tailored to the applicable class and rule.
+A fictional reviewer might ask, “The SDR claims the access restriction covers central administrators and delegated support. The test record shows a denied operation for a central administrator. What supports the claim for delegated support? Identify the relevant result or explain how the selected test represents that group.”
 
 ### 8. Bring the reasoning to the team
 
@@ -151,7 +153,7 @@ The [teaching scenarios](sample-analysis.html) are newly constructed examples. T
 
 - **Class A claim versus audit scope:** a specific authentication claim is supported by a report describing a broader, less specific control. Determine what the report establishes and what remains to be substantiated.
 - **Class B reference versus evidence:** an assessor paragraph names a test artifact, but that artifact is not in the files available to the reviewer. Distinguish “cited” from “supplied” and request a precise location.
-- **Class C status reconciliation:** a current partial implementation statement and an earlier favorable assessment refer to different populations. Preserve both while resolving scope and chronology.
+- **Class C assessment scope.** A test corroborates the provider’s statement for central administrators. Decide what the result establishes for that group and whether it supports a broader claim.
 - **Measurement quality:** a successful collection job still reports adverse security results and unclassified resources. Keep collection success, security outcome and coverage separate.
 - **Examples versus operating records:** a fictional incident-report example contains populated dates; those values must not become actual incident statistics.
 
@@ -181,16 +183,16 @@ A populated workbook must match the class you are reviewing. The blank starter o
 2. **Evidence to inspect.** Open the cited record. Identify the population, period, method, result and exceptions. Return to the same practice.
 3. **Enter your review sheet findings.** Confirm the class, practice ID and row. Record what the evidence supports and what is still needed.
 
-For example, open **AFC-CSO-ACK** in the fictional Class C exercise. The assessment reports a pass, while the provider describes partial implementation. The receipt test shows a response to one external sender, with internal sender routes and recovery untested. Under **Enter your review sheet findings**, confirm the destination is **Review Sheet, Class C, AFC-CSO-ACK**. Expand **Record the provider claim and evidence · F–K** for provider and evidence fields, then **Judge intent and information sufficiency · L–O** for your conclusions. In the unmodified v1.08 starter it is row **235**. The table shows one reviewer’s entries for this teaching case.
+For example, open **AFC-CSO-ACK** in the fictional Class C exercise. The receipt test confirms what the provider says about the tested external sender. The assessor records “Pass” for that observation, and the provider discloses partial implementation. To evaluate the rule, establish which other routes can receive relevant FedRAMP messages and whether this test represents them. Under **Enter your review sheet findings**, confirm the destination is **Review Sheet, Class C, AFC-CSO-ACK**. Expand **Record the provider claim and evidence · F–K** for provider and evidence fields, then **Judge intent and information sufficiency · L–O** for your conclusions. In the unmodified v1.08 starter it is row **235**. The table shows one reviewer’s entries for this teaching case.
 
 | Workbook cell | Example entry | Why it belongs there |
 | --- | --- | --- |
 | F235 · Provider status | Partially Implemented | Preserve what the provider reported. |
 | I235 · Implementation evidence | Provided | You inspected the submitted test record. Put its location and limits in O. |
 | L235 · Rule intent met | Partial | The test demonstrated receipt on the observed route. |
-| M235 · Sufficient information | Partial | The tester identified the other paths, but supplied no results for them. |
-| N235 · Reviewer status | Concern | The discrepancy needs discussion or more evidence. |
-| O235 · Internal notes | Receipt test, Nov. 1, one external sender. The assessed pass covers that route. Provide results for internal senders and recovery, or explain why either falls outside this service. | A second reviewer can locate the observation, see its limit and understand what would close the question. |
+| M235 · Sufficient information | Partial | The package leaves the relevance of the untested routes and the representativeness of this test open. |
+| N235 · Reviewer status | Concern | The reviewer needs to establish which FedRAMP message routes the test represents. |
+| O235 · Internal notes | inbox-receipt-test.json, Nov. 1. One external sender received the acknowledgment. Which other paths receive relevant messages? Explain why this test represents them or provide the applicable result. | A second reviewer can locate the observation, see its limit and understand what would close the question. |
 
 The practice counts as a recorded decision when you select **OK, nothing additional** in N, even if O is blank, or **Concern** in N and supply a reason in O. Earlier standalone Companion notes count when a working disposition and written basis are both present.
 
