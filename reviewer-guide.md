@@ -9,7 +9,7 @@ This guide combines the internal SOP and workbook, official CR26 material, and n
 ## Start here
 
 1. Read “The reasoning behind the review” and “One practice, end to end” below.
-2. Open the [local Review Companion](reviewer.html) and load the fictional teaching example. Follow KSI-IAM-APM through implementation, validation and assessment.
+2. Open the [Review Companion](reviewer.html) and load the fictional teaching example. The [package scorecard walkthrough](scorecard-guide.html) shows how to read a count, follow one claim to a test record, and record what the test actually supports.
 3. Read the [fictional review exercises](sample-analysis.html). Practice distinguishing an implementation claim, its supporting evidence, and a reviewer conclusion.
 4. Use the [SOP and workbook map](internal-workflow-analysis.html) alongside your actual review sheet.
 5. Read the [official-source research](official-research.html) before relying on a rule or class-specific expectation. Confirm the current version for the review you are assigned.
@@ -175,7 +175,7 @@ Open [reviewer.html](reviewer.html) in a browser. It works without a server or i
 
 The readable view presents headings, labeled fields, paragraphs, lists and nested records instead of requiring you to read JSON punctuation. The Raw JSON view preserves the source data for comparison. **Download readable document** saves a standalone HTML rendering of the whole selected file, which can be opened or printed from a browser. It contains source content, not your review notes. JSON pointers identify where the displayed text originates. Readable formatting changes presentation, not the source content or its evidentiary meaning.
 
-Select Class A, B or C to see focused published-rule expectations and suggested review questions. Class selection does not automatically determine applicability. The prototype does not validate official JSON Schemas, inspect PDFs, follow trust-center links, evaluate the full package, authenticate assessor conclusions, or score compliance.
+Select Class A, B or C to see the published-rule lens and **Package scorecard**. Select the JSON documents and supporting files together, or choose a package folder. The scorecard compares the KSI roster, checks supported JSON against pinned schemas, traces local references and highlights the next practice to inspect. See [how to read the scorecard](scorecard-guide.html) for a worked example. It does not inspect the contents of PDFs or Office files, follow trust-center links, determine full applicability, or score compliance.
 
 ### Find evidence references
 
