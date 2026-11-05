@@ -8,7 +8,7 @@ This guide combines the internal SOP and workbook, official CR26 material, and n
 
 ## Start here
 
-For a first review, try the fictional Class C example. Open **AFC-CSO-ACK** and follow the receipt test. The provider describes partial implementation. One external sender received an acknowledgment, exactly as the assessor reports. Your first question is whether this route represents the messages the rule covers. Record what you can establish and which evidence would answer any remaining question. [Open the Review Companion](reviewer.html)
+For a first review, load the fictional Class C example. In **Rules and KSIs**, select **No automated flags**, open **AFC-CSO-ACK** and follow the receipt test. The provider describes partial implementation. One external sender received an acknowledgment, exactly as the assessor reports. Your first question is whether this route represents the messages the rule covers. Record what you can establish and which evidence would answer any remaining question. [Open the Review Companion](reviewer.html)
 
 For the step-by-step route from that observation to workbook row 235, see **Walk through a package in the Review Companion** below. The [scorecard walkthrough](scorecard-guide.html) follows the same fictional artifacts. Use the [SOP and workbook map](internal-workflow-analysis.html) for team roles and handoffs, and the [official sources](official-research.html) to check the rule edition for your assignment.
 
@@ -169,7 +169,7 @@ Treat the supplied Excel export carefully: it has duplicate Class C KSI-SVC-VRI 
 
 ## Walk through a package in the Review Companion
 
-The Companion starts with the evidence you will use to make a row entry. You can revisit package scope, the class reference or a source document while working on a practice. [Open the Review Companion](reviewer.html)
+After you choose the files, the Companion opens **Rules and KSIs** for the selected class. Use it to pick a practice, inspect its evidence and record a decision on the corresponding review sheet row. [Open the Review Companion](reviewer.html)
 
 ### 1. Open the current files and your review sheet
 
@@ -177,13 +177,24 @@ Start from the intake and kickoff decisions. Confirm that you have access to the
 
 A populated workbook must match the class you are reviewing. The blank starter opens with Class A selected in its Summary tab. For a new Class C review, confirm the class change on the copy when prompted. For a practice run, select Class C and load the fictional teaching example.
 
-### 2. Take one practice from question to workbook entry
+### 2. Choose a practice and take it through to a workbook entry
 
-1. **Items to reconcile.** Read the suggested question or select your assigned practice. Check the class rule and compare the provider’s implementation, validation and independent assessment.
+Scan **Rules and KSIs** before opening a practice. Each submitted row shows what the tool could identify in the files you selected, such as implementation text, an assessor narrative or a linked evidence file. The overview keeps the automated result and your reviewer decision in separate columns.
+
+| View | What to do |
+| --- | --- |
+| **Needs attention** | Read the specific follow-up on a submitted entry. Choose a row to investigate or filter by evidence to find a file you can inspect now. |
+| **No automated flags** | Open the cited evidence. Check whether the method, population, time period and result support the claim. You can still record a Concern. |
+| **Check coverage** | A practice on the worksheet or class KSI roster has no corresponding entry in the selected SDRs. Check the controlling SDR and applicability before recording a gap. |
+| **Reference only** | Consult the class reference for the audience, conditions and optional practices. When you have loaded only supporting files, choose an SDR to start the comparison. |
+
+Search by identifier or title, or narrow the list to rules or KSIs. If an identifier appears more than once, use the source file and location shown beside it to choose which entry to review. **Back to rules and KSIs** returns to the same place in the filtered list.
+
+1. **Items to reconcile.** Open your assigned practice or one with a question you can investigate. Read the applicable rule, then compare the provider’s implementation and validation with what the assessor actually tested.
 2. **Evidence to inspect.** Open the cited record. Identify the population, period, method, result and exceptions. Return to the same practice.
 3. **Enter your review sheet findings.** Confirm the class, practice ID and row. Record what the evidence supports and what is still needed.
 
-For example, open **AFC-CSO-ACK** in the fictional Class C exercise. The receipt test confirms what the provider says about the tested external sender. The assessor records “Pass” for that observation, and the provider discloses partial implementation. To evaluate the rule, establish which other routes can receive relevant FedRAMP messages and whether this test represents them. Under **Enter your review sheet findings**, confirm the destination is **Review Sheet, Class C, AFC-CSO-ACK**. Expand **Record the provider claim and evidence · F–K** for provider and evidence fields, then **Judge intent and information sufficiency · L–O** for your conclusions. In the unmodified v1.08 starter it is row **235**. The table shows one reviewer’s entries for this teaching case.
+For example, open **AFC-CSO-ACK** in the fictional Class C exercise. This entry appears under **No automated flags**. The tool found the narratives and a link to selected evidence. The receipt test confirms what the provider says about the tested external sender. The assessor records “Pass” for that observation, and the provider discloses partial implementation. To evaluate the rule, establish which other routes can receive relevant FedRAMP messages and whether this test represents them. Under **Enter your review sheet findings**, confirm the destination is **Review Sheet, Class C, AFC-CSO-ACK**. Expand **Record the provider claim and evidence · F–K** for provider and evidence fields, then **Judge intent and information sufficiency · L–O** for your conclusions. In the unmodified v1.08 starter it is row **235**. The table shows one reviewer’s entries for this teaching case.
 
 | Workbook cell | Example entry | Why it belongs there |
 | --- | --- | --- |
