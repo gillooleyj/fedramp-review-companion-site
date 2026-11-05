@@ -4,11 +4,11 @@
 
 This repository contains only the published website files. The guide and review tool are a learning aid, not an official FedRAMP service or an automated certification decision. Examples are fictional. Original provider packages, submitted artifacts, raw SOP/workbooks, and review notes are not included.
 
-1. **Load the package.** Choose the class and select an extracted package folder or a group of files. To try the tool first, choose Class A and load the fictional teaching example.
-2. **Check the package.** Review the file and schema checks, class KSI coverage and evidence references. Record your basis for the package-level checks. [How to read the scorecard](https://gillooleyj.github.io/fedramp-review-companion-site/scorecard-guide.html)
-3. **Review practices and evidence.** Follow each submitted practice to its cited evidence, then enter a disposition and rationale. Browse a whole JSON document, preview linked text or save a PDF or Office file to inspect on your device.
-4. **Record your determination.** Inspect open items, write your working recommendation and download the **team handoff (.txt)**. You can hand off an in-progress review with outstanding questions.
+1. Choose the class and open the extracted package and your team's v1.08 Excel workbook. To practice, select Class C and load the fictional teaching example.
+2. Begin with a practice’s **Items to reconcile**. Follow the claim to the referenced evidence and record your decisions on the matching class and practice row. Class C practice **AFC-CSO-ACK** demonstrates the process at row 235 in the starter.
+3. Reconcile package scope, independent assessment, reporting and remaining coverage questions. [How to read the scorecard](https://gillooleyj.github.io/fedramp-review-companion-site/scorecard-guide.html)
+4. Write your recommendation, choose **Download updated review sheet (.xlsx)** and prepare a team handoff. Individual reviewer judgments belong in F–P. The team uses Q–U to record agreed actions and outcomes.
 
-The review takes place in your browser tab. To keep editable work, choose **Export review notes** before closing the tab. Resume with the same files, paths and class, then choose **Load saved review notes** in step 1 and select the exported JSON. The scorecard text download in step 2 is a snapshot of counts and traces.
+The Companion processes the selected package and workbook in the browser tab. **Export review notes** saves editable progress as JSON. Restore it with the same package files, folder paths, class and corresponding workbook. Use the downloaded Excel copy to transfer supported entries to the team’s shared process.
 
 GitHub Pages publishes the `main` branch at the repository root. Updated files are built and reviewed separately before publication here.

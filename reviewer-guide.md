@@ -8,11 +8,9 @@ This guide combines the internal SOP and workbook, official CR26 material, and n
 
 ## Start here
 
-1. Read “The reasoning behind the review” and “One practice, end to end” below.
-2. Open the [Review Companion](reviewer.html) and load the fictional teaching example. The [package scorecard walkthrough](scorecard-guide.html) shows how to read a count, follow one claim to a test record, and record what the test actually supports.
-3. Read the [fictional review exercises](sample-analysis.html). Practice distinguishing an implementation claim, its supporting evidence, and a reviewer conclusion.
-4. Use the [SOP and workbook map](internal-workflow-analysis.html) alongside your actual review sheet.
-5. Read the [official-source research](official-research.html) before relying on a rule or class-specific expectation. Confirm the current version for the review you are assigned.
+For a first review, try the fictional example with **Class C** selected. Open **AFC-CSO-ACK**, read **Items to reconcile**, and follow the receipt test. It shows one external sender received an acknowledgment. The assessment says “Pass,” while the provider reports partial implementation and the test omits other routes. Your first task is to decide what that one test supports and record the remaining question in the sheet. [Open the Review Companion](reviewer.html)
+
+For the step-by-step route from that observation to workbook row 235, see **Walk through a package in the Review Companion** below. The [scorecard walkthrough](scorecard-guide.html) follows the same fictional artifacts. Use the [SOP and workbook map](internal-workflow-analysis.html) for team roles and handoffs, and the [official sources](official-research.html) to check the rule edition for your assignment.
 
 ## The reasoning behind the review
 
@@ -169,39 +167,52 @@ Treat the supplied Excel export carefully: it has duplicate Class C KSI-SVC-VRI 
 
 ## Walk through a package in the Review Companion
 
-The [Review Companion](reviewer.html) keeps the selected files and your work in the current browser tab. Follow the four steps in order on a first review. Use the numbered navigation to revisit a step as questions arise.
+The Companion starts with the evidence you will use to make a row entry. You can revisit package scope, the class reference or a source document while working on a practice. [Open the Review Companion](reviewer.html)
 
-### 1. Load the package
+### 1. Open the current files and your review sheet
 
-Choose the **Review class** from the submission. Extract any archives. Use **Choose folder** to preserve the package’s relative file paths, or **Choose files** to select the JSON documents and supporting artifacts together. Each selection replaces the previous one. Confirm which versions control if the package includes amendments or historical copies. To practice, choose Class A and **Load fictional teaching example**.
+Start from the intake and kickoff decisions. Confirm that you have access to the referenced material, the correct offering, the review class, the assessment period, the controlling SDR version and your assigned practices. If you are also handling intake, use the SOP’s completeness check before starting individual review. Extract archives first. Select the package folder to keep relative file paths, or select the current JSON documents and supporting artifacts together. Check whether another SDR is a superseded version before using its claims. Attach the team's v1.08 Excel workbook under **Team review sheet (.xlsx)**. You can draft entries before attaching it. Keep your original workbook with the package.
 
-### 2. Check the package
+A populated workbook must match the class you are reviewing. The blank starter opens with Class A selected in its Summary tab. For a new Class C review, confirm the class change on the copy when prompted. For a practice run, select Class C and load the fictional teaching example.
 
-Start with the **Package scorecard**. Check which files opened, whether the recognized CPO, SDR and OCR matched their bundled schemas, which class KSIs appear in each SDR, and which references point to something you can inspect. A structural match tells you the document fits a schema. You still need to read the cited artifact to determine what it supports. The [scorecard walkthrough](scorecard-guide.html) works through a fictional example.
+### 2. Take one practice from question to workbook entry
 
-Open **Published requirements for the selected class**, then work through **Package-level checks**. Confirm the offering, controlling versions and applicable rules. For Class A, inspect the alternative framework assessment. For Classes B and C, check the independent assessment. Reconcile the ongoing report and supporting artifacts. For each check, select a review status and record the file, page or field and what it established in **Source and review basis**. If a check is outside your scope, record why.
+1. **Items to reconcile.** Read the suggested question or select your assigned practice. Check the class rule and compare the provider’s implementation, validation and independent assessment.
+2. **Evidence to inspect.** Open the cited record. Identify the population, period, method, result and exceptions. Return to the same practice.
+3. **Enter your review sheet findings.** Confirm the class, practice ID and row. Record what the evidence supports and what is still needed.
 
-### 3. Review practices and evidence
+For example, open **AFC-CSO-ACK** in the fictional Class C exercise. The assessment reports a pass, while the provider describes partial implementation. The receipt test shows a response to one external sender, with internal sender routes and recovery untested. Under **Enter your review sheet findings**, confirm the destination is **Review Sheet, Class C, AFC-CSO-ACK**. Expand **Record the provider claim and evidence · F–K** for provider and evidence fields, then **Judge intent and information sufficiency · L–O** for your conclusions. In the unmodified v1.08 starter it is row **235**. The table shows one reviewer’s entries for this teaching case.
 
-Work through the submitted SDR practices one at a time. For each one, confirm the applicable rule, read the provider’s implementation and validation, then examine the independent assessment where applicable. Follow the evidence to its source. Record a **Working disposition** and **Evidence and rationale**. Include what you observed, the scope and period it covers, and any follow-up question. The practice counts as reviewed when you enter both a disposition and a written basis. **Next unfinished** takes you to another practice that still needs work. **Find a practice** locates an entry across the selected SDRs.
+| Workbook cell | Example entry | Why it belongs there |
+| --- | --- | --- |
+| F235 · Provider status | Partially Implemented | Preserve what the provider reported. |
+| I235 · Implementation evidence | Provided | You inspected the submitted test record. Put its location and limits in O. |
+| L235 · Rule intent met | Partial | The test demonstrated receipt on the observed route. |
+| M235 · Sufficient information | Partial | The tester identified the other paths, but supplied no results for them. |
+| N235 · Reviewer status | Concern | The discrepancy needs discussion or more evidence. |
+| O235 · Internal notes | Receipt test, Nov. 1, one external sender. The assessed pass covers that route. Provide results for internal senders and recovery, or explain why either falls outside this service. | A second reviewer can locate the observation, see its limit and understand what would close the question. |
 
-An SDR can cite evidence in implementation, validation, assessment text, remarks or a dedicated evidence entry. For example, `frrAssessment` can name an artifact, and `ksiEvidence` can give a structured description and location. SDR schema 1.1.1 has no standard `frrEvidence` field. Check the field and its JSON pointer, then inspect the source before relying on the claim. [SDR evidence-field reference](evidence-fields.html)
+The practice counts as a recorded decision when you select **OK, nothing additional** in N, even if O is blank, or **Concern** in N and supply a reason in O. Earlier standalone Companion notes count when a working disposition and written basis are both present.
 
-Follow a linked JSON record or embedded excerpt in the reader. For matched local text files, **Read selected text file** previews up to 128 KiB. For a PDF, Office file or other binary artifact, use **Save a copy** and open it on your device. Record the relevant page, sheet, cell or passage in your rationale. External references require separate inspection. Use the return control to get back to the practice.
+Work through the remaining fields for your assignment. G is the assignee. H records progress or rationale when implementation is incomplete. J counts distinct automated methods, and K records whether the methods are appropriate. A successful test can still leave automation or coverage unknown. P records a specific strength you would share with the provider. Q–U belong to the later team discussion, agreed actions and agency implications. Leave those decisions for the appropriate participants.
 
-Use **Browse a source document** to choose a JSON file, search its entries or **Read whole document**. **Display format** switches between **Readable document** and **Raw JSON**. **Download readable document** saves a standalone HTML rendering of the selected JSON that you can open or print.
+When identifiers repeat, verify the source version and destination. For example, Class C has two **KSI-SVC-VRI** lines at rows 421 and 422 in the starter. Resolve the intended row with the team before writing to either. If a submitted practice has no matching row, keep its source-linked review note and reconcile the workbook coverage separately. Also review workbook IDs for which the selected SDR has no entry. Record how the team handles each gap.
 
-### 4. Record your determination
+Use the queue to move to the next practice and return to unfinished ones. Field-level references may appear in implementation, validation, assessment prose such as `frrAssessment`, remarks or a dedicated `ksiEvidence` entry. Open matched JSON or an embedded excerpt in the reader. You can preview supported text files locally, or save and open a PDF or Office file on your device. Cite the page, sheet or test record in O. External links require separate inspection. [SDR evidence-field reference](evidence-fields.html)
 
-Review the count of documented checks and practices, then open **Inspect open items before recommending a next step**. Set your **Working recommendation** and write its basis, open conditions and next steps, and implications for agencies. Name the evidence you relied on and the owner or evidence needed to resolve an open question. The team and approving officials make the program decision.
+### 3. Check the package as a whole
 
-**Download team handoff (.txt)** creates a human-readable report with your recommendation, package checks, practice dispositions and rationale, and outstanding work. You can hand off a partial review with **Review in progress** selected. **Download scorecard (.txt)** in step 2 saves a separate snapshot of counts, file checks and practice-level traces.
+Open **Compare SDR identifiers with the team review sheet** to see both directions of the match. Check the scorecard for file and schema issues, class KSI coverage and references that need attention. Reconcile the offering, versions and assessment scope against the CPO, SDR and ongoing report. For Class A, inspect the alternative framework assessment and applicable overlay. For Classes B and C, confirm what the independent assessor examined and when. Bring unresolved access and scope questions to the provider and assessor walkthrough. Complete the MRR work assigned at kickoff using the scope agreed with the lead. Use the package-level checks to document source, outcome and outstanding work. Complete the team's other assigned intake, summary and reporting fields in its workbook. [How to read the scorecard](scorecard-guide.html)
+
+### 4. Prepare the team determination
+
+Review the outstanding questions, unfinished practices and any ambiguous workbook rows. Write your working recommendation, its basis, the conditions for closure and any implications for agencies. A partial review can be handed off with the outstanding work visible. The Conclave and approving officials make the relevant team and program decisions.
+
+Keep the deliverables that fit your next task. **Download updated review sheet (.xlsx)** saves a copy of the attached workbook with your staged F–P edits. Review the listed cell count before downloading. Resolve any competing edits from different SDR versions or existing workbook values first. Open it in Excel so the workbook can recalculate. Verify the selected class and affected rows before using the summary or carrying entries into the team’s shared process. If the team uses a live Google Sheet, transfer the verified entries using the team’s normal process. The team handoff text gives the next reviewer your recommendation and open questions. The scorecard text records counts and references.
 
 ### Save your work and resume
 
-Choose **Export review notes** before replacing the package or closing the tab. Keep the resulting **20x-review-notes.json** with the package. It contains your practice and source notes, package checks and working recommendation for the selected package and class.
-
-To continue in this or another browser, select the same class and load the same complete set of files with the same paths. In step 1, expand **Resume a saved review (optional)** and choose the exported JSON under **Load saved review notes**. The tool uses the class and source-file identities to reconnect notes with the review. When the browser flags a file that can only be identified in the current session, also download the team handoff to retain a readable copy of your package checks and recommendation.
+Use **Export review notes** before closing the tab. Keep the JSON with the package, workbook and any downloaded copy. To resume, reopen the same class, package files and folder paths, reconnect the corresponding workbook, and restore the exported notes in step 1. Keep the original package artifacts and Excel workbook alongside the notes JSON so the Companion can reconnect the review work.
 
 ## Source and version boundaries
 
